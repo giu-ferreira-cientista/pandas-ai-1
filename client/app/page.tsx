@@ -5,6 +5,8 @@ import { ROUTE_ADMIN } from "utils/constants";
 import { useGetMe } from "@/hooks/useUsers";
 import { Loader } from "@/components/loader/Loader";
 
+export const dynamic = 'force-dynamic'
+
 const MainPage = () => {
   const router = useRouter();
   const { data: workspaceResponse, isLoading, isError } = useGetMe();

@@ -12,6 +12,9 @@ import RenderDataFrame from "./RenderDataFrame";
 import ChartRenderer from "components/LoadChartJs/ChartRenderer";
 import { GetLogDetails } from "@/services/logs";
 
+export const dynamic = 'force-dynamic'
+
+
 const FormattedOutput = ({ data }: { data: any }) => {
   const inputData = Array.isArray(data?.data?.value)
     ? data?.data?.value

@@ -9,6 +9,8 @@ import ChatScreen from "components/ChatScreen";
 import { reorderArray } from "utils/reorderConversations";
 import { ConversationMessages } from "@/services/conversations";
 
+export const dynamic = 'force-dynamic'
+
 const ChatDetails = () => {
   const rowsPerPage = 8;
   const [sendQuery, setSendQuery] = useState(false);

@@ -15,6 +15,8 @@ import { appendQueryParamtoURL } from "utils/appendQueryParamtoURL";
 import { useAppStore } from "store";
 import { ConversationMessages } from "@/services/conversations";
 
+export const dynamic = 'force-dynamic'
+
 const ChatPage = () => {
   const params = useSearchParams();
   const conversation_id = params.get("conversationId");

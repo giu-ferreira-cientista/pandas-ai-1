@@ -11,6 +11,8 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { revalidateDatasets } from "@/lib/actions";
 
+export const dynamic = 'force-dynamic'
+
 const AddDataSet = () => {
   const [inputFile, setInputFile] = useState(null);
   const [validationErrors, setValidationErrors] =

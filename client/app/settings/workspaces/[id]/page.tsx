@@ -8,6 +8,8 @@ import AddNewCard from "../../datasets/AddNewCard";
 import { FaFileCsv } from "react-icons/fa";
 import WorkspaceCard from "./WorkspaceCard";
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   params: {
     id: string;

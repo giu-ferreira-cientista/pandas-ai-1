@@ -10,6 +10,8 @@ import { revalidateLogs } from "@/lib/actions";
 import { useQueryClient } from "@tanstack/react-query";
 import { FaCrown } from "react-icons/fa";
 
+export const dynamic = 'force-dynamic'
+
 const GeneralPage = () => {
   const [routes, setRoutes] = useState([]);
   const { data: userResponse, isLoading } = useGetMe();
