@@ -32,7 +32,9 @@ async def create_dataset(
         user: UserInfo = Depends(get_current_user),
         datasets_controller: DatasetController = Depends(Factory().get_datasets_controller)
     ):
+    print('1')
     return await datasets_controller.create_dataset(file,name, description, user)
+    
 
     
 @dataset_router.delete("/{dataset_id}")

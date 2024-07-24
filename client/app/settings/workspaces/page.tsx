@@ -43,6 +43,7 @@ export default async function WorkSpaces() {
             </div>
           </Card>
         ))}
+        
         <Link href={"/settings/workspaces/addspaces"}>
           <AddNewCard text="New workspace" />
         </Link>

@@ -75,6 +75,7 @@ class DatasetController(BaseController[Dataset]):
     async def create_dataset(self, file: UploadFile, name: str, description: str, user: UserInfo):
         headers = []
         rows = []
+        print('2')
         try:
             file.file.seek(0)
             csvfile = (line.decode('utf-8') for line in file.file)
@@ -91,7 +92,7 @@ class DatasetController(BaseController[Dataset]):
             "headers": headers,
             "rows": rows[:5]
         }
-
+        print('3')
         dataset = await self.dataset_repository.create_dataset(
             user_id=user.id,
             organization_id=user.organizations[0].id,
@@ -101,7 +102,7 @@ class DatasetController(BaseController[Dataset]):
             config={},
             head=head,
         )
-
+        print('4')
         dataset_id = dataset.id
         file_path = os.path.join(os.getcwd(), 'data', f"{dataset_id}.csv")
         # Rewind the file and save it to disk
@@ -111,9 +112,9 @@ class DatasetController(BaseController[Dataset]):
                 shutil.copyfileobj(file.file, buffer)
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Failed to upload file: {str(e)}")
-        
+        print('5')
         await self.space_repository.add_dataset_to_space(workspace_id=user.space.id,dataset_id=dataset_id)
-
+        print('6')
         return DatasetsDetailsResponseModel(dataset=dataset)
     
 
